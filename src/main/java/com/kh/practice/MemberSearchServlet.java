@@ -3,6 +3,7 @@ package com.kh.practice;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +50,6 @@ public class MemberSearchServlet extends HttpServlet {
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/result.jsp").forward(request, response);
 		
-		)
 	}
 
 }
