@@ -8,6 +8,11 @@
 </head>
 <body>
     <h2>검색 결과</h2>
+    <c:if test="${not empty list}">
+    	<c:forEach items="${list}" var="m">
+    		
+    	</c:forEach>
+    </c:if>
 	<!-- 
 		Servlet에서 전달받은 데이터를 바탕으로 응답화면 그리기.
 		1. servlet에서 전달받은 데이터가 존재하는 경우와 , 존재하지 않는 경우를
@@ -29,6 +34,6 @@
             <p>나이: 21</p>
             <p>성별: 남자</p>
 		</div>	
-	</div>   
+	</div> 
 </body>
 </html>

@@ -38,8 +38,18 @@ public class MemberSearchServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 클라이언트에서 전달한 이름이 포함된 회원을 mockList에서 조회한 후 새로운
-		// List에 담은 후 , 적절한 scope에 담아 result.jsp로 응답처리 위임할 것. 
+		
+		request.setCharacterEncoding("utf-8");
+		String name = request.getParameter("name");
+		
+		List<Member> list = mockList.stream()
+			.filter(m -> m.getName().contains(name))
+			.collect(Collectors.toList());
+		
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("/result.jsp").forward(request, response);
+		
+		)
 	}
 
 }
